@@ -15,18 +15,18 @@ spec:
       annotations:
         run.googleapis.com/execution-environment: gen2
         run.googleapis.com/container-dependencies: '{"nginx":["php"]}'
-      containers:
-      - name: nginx
-        image: us-docker.pkg.dev/xxx/default/nginx
-        ports:
-        - containerPort: 8080
-        # resources:
-        #   limits:
-        #     cpu: CPU
-        #     memory: MEMORY
-      - name: php
-        image: us-docker.pkg.dev/xxx/default/php
-        # resources:
-        #   limits:
-        #     cpu: CPU
-        #     memory: MEMORY
+    containers:
+    - name: nginx
+      image: us-docker.pkg.dev/xxx/default/nginx
+      ports:
+      - containerPort: 8080
+      # resources:
+      #   limits:
+      #     cpu: CPU
+      #     memory: MEMORY
+    - name: php
+      image: us-docker.pkg.dev/xxx/default/php
+      # resources:
+      #   limits:
+      #     cpu: CPU
+      #     memory: MEMORY
