@@ -9,10 +9,10 @@ metadata:
   annotations:
     run.googleapis.com/launch-stage: ALPHA
     run.googleapis.com/ingress: all
-spec: 
-  template: 
-    metadata: 
-      annotations: 
+spec:
+  template:
+    metadata:
+      annotations:
         run.googleapis.com/execution-environment: gen2
         run.googleapis.com/container-dependencies: '{"nginx":["php"]}'
       containers:
@@ -26,7 +26,7 @@ spec:
         #     memory: MEMORY
       - name: php
         image: us-docker.pkg.dev/xxx/default/php
-        # resources: 
-        #   limits: 
+        # resources:
+        #   limits:
         #     cpu: CPU
         #     memory: MEMORY
