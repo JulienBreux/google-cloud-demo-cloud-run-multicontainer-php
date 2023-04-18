@@ -1,0 +1,32 @@
+---
+# Ref: https://cloud.google.com/run/docs/reference/yaml/v1
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: php-nginx-service
+  labels:
+    cloud.googleapis.com/location: us-central1
+  annotations:
+    run.googleapis.com/launch-stage: ALPHA
+    run.googleapis.com/ingress: all
+spec: 
+  template: 
+    metadata: 
+      annotations: 
+        run.googleapis.com/execution-environment: gen2
+        run.googleapis.com/container-dependencies: '{"nginx":["php"]}'
+      containers:
+      - name: nginx
+        image: us-docker.pkg.dev/xxx/default/nginx
+        ports:
+        - containerPort: 8080
+        # resources:
+        #   limits:
+        #     cpu: CPU
+        #     memory: MEMORY
+      - name: php
+        image: us-docker.pkg.dev/xxx/default/php
+        # resources: 
+        #   limits: 
+        #     cpu: CPU
+        #     memory: MEMORY
